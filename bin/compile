@@ -55,11 +55,9 @@ if [ ! -f "$CACHE_DIR/$LOGSTASH_PACKAGE" ]; then
   echo "$download ${DOWNLOAD_URL}.sha512.txt"
   echo " $verify ${LOGSTASH_PACKAGE}.sha512.txt"
 
-  if [ $? -eq 0 ]; then
-    mv $LOGSTASH_PACKAGE $CACHE_DIR
-  else
-    exit 1
-  fi
+
+   mv $LOGSTASH_PACKAGE $CACHE_DIR
+
 fi
 
 $extract $CACHE_DIR/$LOGSTASH_PACKAGE
